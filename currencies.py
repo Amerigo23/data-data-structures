@@ -16,15 +16,12 @@ def convert(amount, target_currency):
     """
     value, from_currency = amount
 
-    # Constructing the conversion key
     conversion_key = f"{from_currency}{target_currency}"
 
-    # Check if the conversion rate exists in the RATES dictionary
     if conversion_key not in RATES:
         # If not, return None
         return None
 
-    # Perform the currency conversion and round the result to the nearest whole number
     converted_amount = round(value * RATES[conversion_key])
 
     return converted_amount
